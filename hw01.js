@@ -33,14 +33,14 @@ function hw01foreach() {
 //solution via reduce
 function hw01reduce() {
   const outHw01Reduce = document.querySelector('.out__hw01--reduce');
-  const ol = document.createElement('ol');
-  outHw01Reduce.prepend(ol);
+  const ul = document.createElement('ul');
+  outHw01Reduce.prepend(ul);
 
-  let dataHtmlElArr = data.reduce((acum, item,) => {
-    acum += `<li><a href="${item}">${item}</a></li>`;
+  let dataHtmlElArr = data.reduce((acum, item, index) => {
+    acum += `<li><span>${index + 1})</span> <a href="${item}">${item}</a></li>`;
     return acum;
   }, ``);
-  ol.innerHTML = dataHtmlElArr;
+  ul.innerHTML = dataHtmlElArr;
 }
 
 hw01map();
